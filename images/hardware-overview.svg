@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+<title id="title">GNSS synchronized e-paper clock hardware layout</title><desc id="desc">Illustration of a GNSS BE-122 receiver, DS3231M RTC, ESP32 WROOM battery holder development board, and 2.9 inch e-paper module, with communication links and firmware pin mapping.</desc>
+<defs><style>
+.bg{fill:#f7fafc}.head{fill:#132641}.ink{fill:#152b42}.sub{fill:#526277}.muted{fill:#7d8795}.card{fill:#fff;stroke:#d9e1eb;stroke-width:2}.board{fill:#17476d;stroke:#103d60;stroke-width:3}.board2{fill:#1f5682;stroke:#164263;stroke-width:3}.text{font:24px Arial,sans-serif;fill:#152b42}.small{font:19px Arial,sans-serif;fill:#526277}.h{font:bold 27px Arial,sans-serif;fill:#152b42}.mono{font:bold 17px monospace;fill:#152b42}.line-u{stroke:#3975b4;stroke-width:5;fill:none}.line-i{stroke:#26916c;stroke-width:5;fill:none}.line-s{stroke:#c07727;stroke-width:5;fill:none}.line-p{stroke:#b35a5a;stroke-width:5;fill:none}
+</style><marker id="arr-u" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#3975b4"/></marker><marker id="arr-i" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#26916c"/></marker><marker id="arr-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#c07727"/></marker></defs>
+<rect width="1400" height="780" class="bg"/><rect width="1400" height="118" class="head"/>
+<text x="60" y="57" font-family="Arial" font-size="37" fill="#ffffff" font-weight="bold">Hardware connection overview</text>
+<text x="60" y="92" font-family="Arial" font-size="20" fill="#bed7ec">ESP32 GNSS + RTC clock • reference diagram (not a photograph or PCB schematic)</text>
+<!-- GNSS -->
+<rect x="60" y="164" width="350" height="170" rx="15" class="card"/>
+<rect x="84" y="192" width="102" height="94" rx="12" fill="#d9e6f1" stroke="#a5b6c7" stroke-width="3"/><rect x="97" y="204" width="76" height="70" rx="9" fill="#e9f2f5" stroke="#a3bcc6"/><rect x="120" y="274" width="29" height="12" fill="#1b8769"/>
+<text x="204" y="218" class="h">BE-122 GNSS</text><text x="204" y="255" class="small">NMEA receiver</text><text x="204" y="283" class="small">UART, 38400 baud</text>
+<!-- RTC -->
+<rect x="60" y="375" width="350" height="170" rx="15" class="card"/>
+<rect x="80" y="406" width="110" height="100" rx="9" class="board2"/><circle cx="133" cy="455" r="37" fill="#c0cbd4" stroke="#82909e" stroke-width="5"/><circle cx="133" cy="455" r="28" fill="#dfe5e9" stroke="#9aa9b6"/><text x="204" y="426" class="h">DS3231M RTC</text><text x="204" y="462" class="small">I2C timekeeping</text><text x="204" y="490" class="small">Coin-cell backup</text>
+<!-- ESP32 -->
+<rect x="520" y="232" width="347" height="315" rx="18" class="card"/>
+<rect x="563" y="272" width="251" height="200" rx="17" class="board"/><rect x="626" y="306" width="127" height="99" rx="8" fill="#d4dce5" stroke="#9ba9b5" stroke-width="3"/><text x="643" y="348" font-family="Arial" font-size="27" fill="#173c5b" font-weight="bold">ESP32</text><text x="635" y="377" font-family="Arial" font-size="20" fill="#173c5b">WROOM</text>
+<g fill="#e8c578"><rect x="553" y="300" width="9" height="12"/><rect x="553" y="324" width="9" height="12"/><rect x="553" y="348" width="9" height="12"/><rect x="553" y="372" width="9" height="12"/><rect x="553" y="396" width="9" height="12"/><rect x="814" y="300" width="9" height="12"/><rect x="814" y="324" width="9" height="12"/><rect x="814" y="348" width="9" height="12"/><rect x="814" y="372" width="9" height="12"/></g>
+<text x="693" y="501" text-anchor="middle" class="h">ESP32 development board</text><text x="693" y="530" text-anchor="middle" class="small">with 18650 holder</text>
+<!-- EPD -->
+<rect x="974" y="275" width="363" height="251" rx="15" class="card"/>
+<rect x="1013" y="317" width="287" height="142" rx="6" fill="#1e2530"/><rect x="1028" y="332" width="257" height="114" fill="#f3f1eb" stroke="#b5bac2" stroke-width="4"/>
+<text x="1046" y="360" font-family="monospace" font-size="15" fill="#29323c">GPS:FIX 10  UTC+5</text><line x1="1041" y1="372" x2="1272" y2="372" stroke="#43505d" stroke-width="2"/><text x="1064" y="419" font-family="Arial" font-size="46" font-weight="bold" fill="#29323c">18:26</text><text x="1154" y="491" text-anchor="middle" class="h">2.9-inch e-paper</text><text x="1154" y="517" text-anchor="middle" class="small">296 × 128, monochrome</text>
+<!-- Edges: UART green etc -->
+<path d="M410 249 H480 V315 H563" class="line-u" marker-end="url(#arr-u)"/><text x="438" y="226" font-family="Arial" font-size="20" fill="#3975b4" font-weight="bold">UART</text>
+<path d="M410 453 H470 V423 H563" class="line-i" marker-end="url(#arr-i)"/><text x="438" y="473" font-family="Arial" font-size="20" fill="#26916c" font-weight="bold">I2C</text>
+<path d="M814 358 H974" class="line-s" marker-end="url(#arr-s)"/><text x="875" y="337" font-family="Arial" font-size="20" fill="#c07727" font-weight="bold">SPI</text>
+<!-- Battery -->
+<rect x="523" y="580" width="343" height="93" rx="13" class="card"/><rect x="551" y="606" width="48" height="36" rx="7" fill="#7ec8a1" stroke="#2d8260" stroke-width="3"/><rect x="599" y="616" width="7" height="17" fill="#2d8260"/><text x="623" y="616" class="h">18650 Li-ion cell</text><text x="623" y="645" class="small">board battery holder</text><path d="M692 580 V547" class="line-p"/>
+<!-- Mapping -->
+<rect x="60" y="690" width="1277" height="67" rx="11" fill="#e6edf5"/>
+<text x="82" y="717" class="mono">GNSS TX → GPIO27</text><text x="395" y="717" class="mono">RTC SDA → GPIO21</text><text x="733" y="717" class="mono">RTC SCL → GPIO22</text>
+<text x="82" y="742" class="mono">EPD CS 5 / DC 17 / RST 16 / BUSY 4</text><text x="660" y="742" class="mono">SPI SCK 18 / MOSI 23 (default VSPI)</text>
+</svg>
